@@ -23,11 +23,11 @@ variable "peer_virtual_network_gateway_id" {
   type        = string
 }
 
-variable "shared_key" {
-  description = "Shared key for the VPN connection"
-  type        = string
-  sensitive   = true
-}
+# variable "shared_key" {
+#   description = "Shared key for the VPN connection"
+#   type        = string
+#   sensitive   = true
+# }
 
 variable "tags" {
   description = "Tags to apply to resources"
