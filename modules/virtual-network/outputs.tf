@@ -13,11 +13,6 @@ output "gateway_subnet_id" {
   value       = azurerm_subnet.gateway.id
 }
 
-output "workload_subnet_id" {
-  description = "ID of the workload subnet"
-  value       = azurerm_subnet.workload.id
-}
-
 output "gateway_public_ip_id" {
   description = "ID of the gateway public IP"
   value       = azurerm_public_ip.gateway.id
