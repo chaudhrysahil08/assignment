@@ -40,7 +40,6 @@ inputs = {
   connection_name                    = "conn-dev-a-to-b"
   virtual_network_gateway_id         = dependency.vpn_gateway.outputs.gateway_id
   peer_virtual_network_gateway_id    = dependency.peer_vpn_gateway.outputs.gateway_id
-  #shared_key                         = get_env("TF_VAR_vpn_shared_key", "DefaultSharedKey123!")
   
   location            = dependency.resource_group.outputs.location
   resource_group_name = dependency.resource_group.outputs.resource_group_name
