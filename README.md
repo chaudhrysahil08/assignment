@@ -69,7 +69,7 @@ brew install terragrunt
 ```
 assignment/
 ├── README.md
-├── terragrunt.hcl                    # Root Terragrunt configuration
+├── root.hcl                          # Root Terragrunt configuration
 ├── modules/                          # Reusable Terraform modules
 │   ├── resource-group/
 │   │   ├── main.tf
