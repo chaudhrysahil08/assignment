@@ -2,20 +2,6 @@
 
 This project sets up VNet-to-VNet VPN connections between two Azure subscriptions using Terraform modules managed by Terragrunt. It creates a secure connection between virtual networks across different Azure subscriptions.
 
-## 📋 Table of Contents
-
-- [Architecture Overview](#https://github.com/chaudhrysahil08/assignment/blob/main/README.md#%EF%B8%8F-architecture-overview)
-- [Prerequisites](#prerequisites)
-- [Project Structure](#project-structure)
-- [Setup Instructions](#setup-instructions)
-- [Authentication Setup](#authentication-setup)
-- [Backend Configuration](#backend-configuration)
-- [Variable Configuration](#variable-configuration)
-- [Running the Deployment](#running-the-deployment)
-- [Sample Terraform Plan Output](#sample-terraform-plan-output)
-- [Troubleshooting](#troubleshooting)
-- [Cleanup](#cleanup)
-
 ## 🏗️ Architecture Overview
 
 This solution creates:
@@ -154,7 +140,7 @@ az account set --subscription "12345678-1234-9876-4563-123456789015"
 # Create a service principal
 az ad sp create-for-rbac --name "terraform-vpn-sp" --role Contributor \
   --scopes "/subscriptions/12345678-1234-9876-4563-123456789015" \
-          "/subscriptions/12345678-1234-1234-1234-123456789abc"
+          "/subscriptions/12345678-1234-9876-4563-123456789016"
 
 # Set environment variables
 export ARM_CLIENT_ID="<client-id>"
