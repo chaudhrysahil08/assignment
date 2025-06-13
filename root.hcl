@@ -12,8 +12,8 @@ locals {
   
 subscription_mapping = {
   # Dev subscriptions
-  "dev-subscription-a" = "12345678-1234-9876-4563-123456789015"
-  "dev-subscription-b" = "12345678-1234-9876-4563-123456789016"
+  "dev-subscription-a" = "85659bb0-6be4-44fb-be6d-f46301b046d4"
+  "dev-subscription-b" = "85659bb0-6be4-44fb-be6d-f46301b046d4"
   # Prod subscriptions
   #"prod-subscription-a" = "abcdef12-3456-7890-abcd-ef1234567890"
   #"prod-subscription-b" = "fedcba09-8765-4321-fedc-ba0987654321"

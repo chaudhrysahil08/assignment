@@ -1,0 +1,519 @@
+terragrunt plan --all
+21:13:35.698 INFO   The stack at . will be processed in the following order for command plan:
+Group 1
+- Module ./environments/dev/subscription-a/resource-group
+- Module ./environments/dev/subscription-b/resource-group
+
+Group 2
+- Module ./environments/dev/subscription-a/virtual-network
+- Module ./environments/dev/subscription-b/virtual-network
+
+Group 3
+- Module ./environments/dev/subscription-a/vpn-gateway
+- Module ./environments/dev/subscription-b/vpn-gateway
+
+Group 4
+- Module ./environments/dev/subscription-a/vpn-connection
+- Module ./environments/dev/subscription-b/vpn-connection
+
+
+21:13:47.762 STDOUT [environments/dev/subscription-a/resource-group] terraform: Terraform used the selected providers to generate the following execution
+21:13:47.762 STDOUT [environments/dev/subscription-a/resource-group] terraform: plan. Resource actions are indicated with the following symbols:
+21:13:47.762 STDOUT [environments/dev/subscription-a/resource-group] terraform:   + create
+21:13:47.762 STDOUT [environments/dev/subscription-a/resource-group] terraform: Terraform will perform the following actions:
+21:13:47.762 STDOUT [environments/dev/subscription-a/resource-group] terraform:   # azurerm_resource_group.main will be created
+21:13:47.762 STDOUT [environments/dev/subscription-a/resource-group] terraform:   + resource "azurerm_resource_group" "main" {
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:       + id       = (known after apply)
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:       + location = "eastus"
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:       + name     = "rg-vpn-dev-subscription-a"
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:       + tags     = {
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:           + "Environment"  = "dev"
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:           + "Project"      = "azure-vnet-vpn"
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:           + "Subscription" = "subscription-a"
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:         }
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:     }
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform: Plan: 1 to add, 0 to change, 0 to destroy.
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform: 
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform: Changes to Outputs:
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:   + location            = "eastus"
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:   + resource_group_id   = (known after apply)
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform:   + resource_group_name = "rg-vpn-dev-subscription-a"
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform: 
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform: ─────────────────────────────────────────────────────────────────────────────
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform: Note: You didn't use the -out option to save this plan, so Terraform can't
+21:13:47.763 STDOUT [environments/dev/subscription-a/resource-group] terraform: guarantee to take exactly these actions if you run "terraform apply" now.
+21:13:48.000 STDOUT [environments/dev/subscription-b/resource-group] terraform: Terraform used the selected providers to generate the following execution
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform: plan. Resource actions are indicated with the following symbols:
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:   + create
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform: Terraform will perform the following actions:
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:   # azurerm_resource_group.main will be created
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:   + resource "azurerm_resource_group" "main" {
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:       + id       = (known after apply)
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:       + location = "westus2"
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:       + name     = "rg-vpn-dev-subscription-b"
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:       + tags     = {
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:           + "Environment"  = "dev"
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:           + "Project"      = "azure-vnet-vpn"
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:           + "Subscription" = "subscription-b"
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:         }
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:     }
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform: Plan: 1 to add, 0 to change, 0 to destroy.
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform: 
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform: Changes to Outputs:
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:   + location            = "westus2"
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:   + resource_group_id   = (known after apply)
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform:   + resource_group_name = "rg-vpn-dev-subscription-b"
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform: 
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform: ─────────────────────────────────────────────────────────────────────────────
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform: Note: You didn't use the -out option to save this plan, so Terraform can't
+21:13:48.001 STDOUT [environments/dev/subscription-b/resource-group] terraform: guarantee to take exactly these actions if you run "terraform apply" now.
+21:13:49.896 WARN   [environments/dev/subscription-a/virtual-network] Config ./environments/dev/subscription-a/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/virtual-network/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:13:50.005 WARN   [environments/dev/subscription-b/virtual-network] Config ./environments/dev/subscription-b/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/virtual-network/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:13:59.367 STDOUT [environments/dev/subscription-b/virtual-network] terraform: Terraform used the selected providers to generate the following execution
+21:13:59.367 STDOUT [environments/dev/subscription-b/virtual-network] terraform: plan. Resource actions are indicated with the following symbols:
+21:13:59.367 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + create
+21:13:59.367 STDOUT [environments/dev/subscription-b/virtual-network] terraform: Terraform will perform the following actions:
+21:13:59.367 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   # azurerm_public_ip.gateway will be created
+21:13:59.367 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + resource "azurerm_public_ip" "gateway" {
+21:13:59.368 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + allocation_method       = "Static"
+21:13:59.368 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + ddos_protection_mode    = "VirtualNetworkInherited"
+21:13:59.370 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + fqdn                    = (known after apply)
+21:13:59.370 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + id                      = (known after apply)
+21:13:59.370 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + idle_timeout_in_minutes = 4
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + ip_address              = (known after apply)
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + ip_version              = "IPv4"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + location                = "westus2"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + name                    = "vnet-dev-subscription-b-gateway-pip"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + resource_group_name     = "mock-rg-name"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + sku                     = "Standard"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + sku_tier                = "Regional"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + tags                    = {
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:           + "Environment"  = "dev"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:           + "Project"      = "azure-vnet-vpn"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:           + "Subscription" = "subscription-b"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:         }
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:     }
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   # azurerm_subnet.gateway will be created
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + resource "azurerm_subnet" "gateway" {
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + address_prefixes                              = [
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:           + "10.2.255.0/27",
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:         ]
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + default_outbound_access_enabled               = true
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + id                                            = (known after apply)
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + name                                          = "GatewaySubnet"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + private_endpoint_network_policies             = "Disabled"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + private_link_service_network_policies_enabled = true
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + resource_group_name                           = "mock-rg-name"
+21:13:59.371 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + virtual_network_name                          = "vnet-dev-subscription-b"
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:     }
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   # azurerm_subnet.workload will be created
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + resource "azurerm_subnet" "workload" {
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + address_prefixes                              = [
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:           + "10.2.1.0/24",
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:         ]
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + default_outbound_access_enabled               = true
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + id                                            = (known after apply)
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + name                                          = "workload-subnet"
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + private_endpoint_network_policies             = "Disabled"
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + private_link_service_network_policies_enabled = true
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + resource_group_name                           = "mock-rg-name"
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + virtual_network_name                          = "vnet-dev-subscription-b"
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:     }
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   # azurerm_virtual_network.main will be created
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + resource "azurerm_virtual_network" "main" {
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + address_space                  = [
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:           + "10.2.0.0/16",
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:         ]
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + dns_servers                    = (known after apply)
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + guid                           = (known after apply)
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + id                             = (known after apply)
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + location                       = "westus2"
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + name                           = "vnet-dev-subscription-b"
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + private_endpoint_vnet_policies = "Disabled"
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + resource_group_name            = "mock-rg-name"
+21:13:59.372 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + subnet                         = (known after apply)
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:       + tags                           = {
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:           + "Environment"  = "dev"
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:           + "Project"      = "azure-vnet-vpn"
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:           + "Subscription" = "subscription-b"
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:         }
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:     }
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform: Plan: 4 to add, 0 to change, 0 to destroy.
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform: 
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform: Changes to Outputs:
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + gateway_public_ip_address = (known after apply)
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + gateway_public_ip_id      = (known after apply)
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + gateway_subnet_id         = (known after apply)
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + vnet_id                   = (known after apply)
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + vnet_name                 = "vnet-dev-subscription-b"
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform:   + workload_subnet_id        = (known after apply)
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform: 
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform: ─────────────────────────────────────────────────────────────────────────────
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform: Note: You didn't use the -out option to save this plan, so Terraform can't
+21:13:59.373 STDOUT [environments/dev/subscription-b/virtual-network] terraform: guarantee to take exactly these actions if you run "terraform apply" now.
+21:13:59.552 WARN   [environments/dev/subscription-b/virtual-network] Config ./environments/dev/subscription-b/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/virtual-network/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:13:59.554 WARN   [environments/dev/subscription-b/vpn-gateway] Config ./environments/dev/subscription-b/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:13:59.815 STDOUT [environments/dev/subscription-a/virtual-network] terraform: Terraform used the selected providers to generate the following execution
+21:13:59.815 STDOUT [environments/dev/subscription-a/virtual-network] terraform: plan. Resource actions are indicated with the following symbols:
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + create
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform: Terraform will perform the following actions:
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   # azurerm_public_ip.gateway will be created
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + resource "azurerm_public_ip" "gateway" {
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + allocation_method       = "Static"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + ddos_protection_mode    = "VirtualNetworkInherited"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + fqdn                    = (known after apply)
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + id                      = (known after apply)
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + idle_timeout_in_minutes = 4
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + ip_address              = (known after apply)
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + ip_version              = "IPv4"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + location                = "eastus"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + name                    = "vnet-dev-subscription-a-gateway-pip"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + resource_group_name     = "mock-rg-name"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + sku                     = "Standard"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + sku_tier                = "Regional"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + tags                    = {
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:           + "Environment"  = "dev"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:           + "Project"      = "azure-vnet-vpn"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:           + "Subscription" = "subscription-a"
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:         }
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:     }
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   # azurerm_subnet.gateway will be created
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + resource "azurerm_subnet" "gateway" {
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + address_prefixes                              = [
+21:13:59.816 STDOUT [environments/dev/subscription-a/virtual-network] terraform:           + "10.1.255.0/27",
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:         ]
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + default_outbound_access_enabled               = true
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + id                                            = (known after apply)
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + name                                          = "GatewaySubnet"
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + private_endpoint_network_policies             = "Disabled"
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + private_link_service_network_policies_enabled = true
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + resource_group_name                           = "mock-rg-name"
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + virtual_network_name                          = "vnet-dev-subscription-a"
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:     }
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   # azurerm_subnet.workload will be created
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + resource "azurerm_subnet" "workload" {
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + address_prefixes                              = [
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:           + "10.1.1.0/24",
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:         ]
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + default_outbound_access_enabled               = true
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + id                                            = (known after apply)
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + name                                          = "workload-subnet"
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + private_endpoint_network_policies             = "Disabled"
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + private_link_service_network_policies_enabled = true
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + resource_group_name                           = "mock-rg-name"
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + virtual_network_name                          = "vnet-dev-subscription-a"
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:     }
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   # azurerm_virtual_network.main will be created
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + resource "azurerm_virtual_network" "main" {
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + address_space                  = [
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:           + "10.1.0.0/16",
+21:13:59.817 STDOUT [environments/dev/subscription-a/virtual-network] terraform:         ]
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + dns_servers                    = (known after apply)
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + guid                           = (known after apply)
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + id                             = (known after apply)
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + location                       = "eastus"
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + name                           = "vnet-dev-subscription-a"
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + private_endpoint_vnet_policies = "Disabled"
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + resource_group_name            = "mock-rg-name"
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + subnet                         = (known after apply)
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:       + tags                           = {
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:           + "Environment"  = "dev"
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:           + "Project"      = "azure-vnet-vpn"
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:           + "Subscription" = "subscription-a"
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:         }
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:     }
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform: Plan: 4 to add, 0 to change, 0 to destroy.
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform: 
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform: Changes to Outputs:
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + gateway_public_ip_address = (known after apply)
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + gateway_public_ip_id      = (known after apply)
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + gateway_subnet_id         = (known after apply)
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + vnet_id                   = (known after apply)
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + vnet_name                 = "vnet-dev-subscription-a"
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform:   + workload_subnet_id        = (known after apply)
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform: 
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform: ─────────────────────────────────────────────────────────────────────────────
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform: Note: You didn't use the -out option to save this plan, so Terraform can't
+21:13:59.818 STDOUT [environments/dev/subscription-a/virtual-network] terraform: guarantee to take exactly these actions if you run "terraform apply" now.
+21:14:00.000 WARN   [environments/dev/subscription-a/virtual-network] Config ./environments/dev/subscription-a/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/virtual-network/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:00.002 WARN   [environments/dev/subscription-a/vpn-gateway] Config ./environments/dev/subscription-a/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:01.204 WARN   [environments/dev/subscription-b/vpn-gateway] Config ./environments/dev/subscription-b/virtual-network/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:01.549 WARN   [environments/dev/subscription-a/vpn-gateway] Config ./environments/dev/subscription-a/virtual-network/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: Terraform used the selected providers to generate the following execution
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: plan. Resource actions are indicated with the following symbols:
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:   + create
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: Terraform will perform the following actions:
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:   # azurerm_virtual_network_gateway.main will be created
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:   + resource "azurerm_virtual_network_gateway" "main" {
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + active_active                         = false
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + bgp_route_translation_for_nat_enabled = false
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + enable_bgp                            = false
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + generation                            = (known after apply)
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + id                                    = (known after apply)
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + ip_sec_replay_protection_enabled      = true
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + location                              = "westus2"
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + name                                  = "vgw-dev-subscription-b"
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + remote_vnet_traffic_enabled           = false
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + resource_group_name                   = "mock-rg-name"
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + sku                                   = "VpnGw1"
+21:14:10.722 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + tags                                  = {
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:           + "Environment"  = "dev"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:           + "Project"      = "azure-vnet-vpn"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:           + "Subscription" = "subscription-b"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:         }
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + type                                  = "Vpn"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + virtual_wan_traffic_enabled           = false
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + vpn_type                              = "RouteBased"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:       + ip_configuration {
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:           + name                          = "vnetGatewayConfig"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:           + private_ip_address_allocation = "Dynamic"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:           + public_ip_address_id          = "/subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/example-resource-group/providers/Microsoft.Network/publicIPAddresses/248.27.219.215"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:           + subnet_id                     = "/subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/rg-mock/providers/Microsoft.Network/virtualNetworks/mock-vnet/subnets/GatewaySubnet"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:         }
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:     }
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: Plan: 1 to add, 0 to change, 0 to destroy.
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: 
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: Changes to Outputs:
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:   + gateway_id   = (known after apply)
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform:   + gateway_name = "vgw-dev-subscription-b"
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: 
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: ─────────────────────────────────────────────────────────────────────────────
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: Note: You didn't use the -out option to save this plan, so Terraform can't
+21:14:10.723 STDOUT [environments/dev/subscription-b/vpn-gateway] terraform: guarantee to take exactly these actions if you run "terraform apply" now.
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: Terraform used the selected providers to generate the following execution
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: plan. Resource actions are indicated with the following symbols:
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:   + create
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: Terraform will perform the following actions:
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:   # azurerm_virtual_network_gateway.main will be created
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:   + resource "azurerm_virtual_network_gateway" "main" {
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + active_active                         = false
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + bgp_route_translation_for_nat_enabled = false
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + enable_bgp                            = false
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + generation                            = (known after apply)
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + id                                    = (known after apply)
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + ip_sec_replay_protection_enabled      = true
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + location                              = "eastus"
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + name                                  = "vgw-dev-subscription-a"
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + remote_vnet_traffic_enabled           = false
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + resource_group_name                   = "mock-rg-name"
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + sku                                   = "VpnGw1"
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + tags                                  = {
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:           + "Environment"  = "dev"
+21:14:10.910 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:           + "Project"      = "azure-vnet-vpn"
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:           + "Subscription" = "subscription-a"
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:         }
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + type                                  = "Vpn"
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + virtual_wan_traffic_enabled           = false
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + vpn_type                              = "RouteBased"
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:       + ip_configuration {
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:           + name                          = "vnetGatewayConfig"
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:           + private_ip_address_allocation = "Dynamic"
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:           + public_ip_address_id          = "/subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/example-resource-group/providers/Microsoft.Network/publicIPAddresses/248.27.219.214"
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:           + subnet_id                     = "/subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/rg-mock/providers/Microsoft.Network/virtualNetworks/mock-vnet/subnets/GatewaySubnet"
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:         }
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:     }
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: Plan: 1 to add, 0 to change, 0 to destroy.
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: 
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: Changes to Outputs:
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:   + gateway_id   = (known after apply)
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform:   + gateway_name = "vgw-dev-subscription-a"
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: 
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: ─────────────────────────────────────────────────────────────────────────────
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: Note: You didn't use the -out option to save this plan, so Terraform can't
+21:14:10.911 STDOUT [environments/dev/subscription-a/vpn-gateway] terraform: guarantee to take exactly these actions if you run "terraform apply" now.
+21:14:11.246 WARN   [environments/dev/subscription-b/vpn-gateway] Config ./environments/dev/subscription-b/virtual-network/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:11.246 WARN   [environments/dev/subscription-b/vpn-gateway] Config ./environments/dev/subscription-b/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:11.247 WARN   [environments/dev/subscription-a/vpn-gateway] Config ./environments/dev/subscription-a/virtual-network/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:11.247 WARN   [environments/dev/subscription-a/vpn-gateway] Config ./environments/dev/subscription-a/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:11.252 WARN   [environments/dev/subscription-a/vpn-gateway] Config ./environments/dev/subscription-a/virtual-network/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:11.252 WARN   [environments/dev/subscription-a/vpn-gateway] Config ./environments/dev/subscription-a/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:11.253 WARN   [environments/dev/subscription-b/vpn-gateway] Config ./environments/dev/subscription-b/virtual-network/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:11.253 WARN   [environments/dev/subscription-b/vpn-gateway] Config ./environments/dev/subscription-b/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/vpn-gateway/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:11.254 WARN   [environments/dev/subscription-b/vpn-connection] Config ./environments/dev/subscription-b/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/vpn-connection/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:11.257 WARN   [environments/dev/subscription-a/vpn-connection] Config ./environments/dev/subscription-a/resource-group/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/vpn-connection/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:12.785 WARN   [environments/dev/subscription-b/vpn-connection] Config ./environments/dev/subscription-b/vpn-gateway/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/vpn-connection/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:12.785 WARN   [environments/dev/subscription-a/vpn-connection] Config ./environments/dev/subscription-b/vpn-gateway/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/vpn-connection/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:12.925 WARN   [environments/dev/subscription-a/vpn-connection] Config ./environments/dev/subscription-a/vpn-gateway/terragrunt.hcl is a dependency of ./environments/dev/subscription-a/vpn-connection/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:12.925 WARN   [environments/dev/subscription-b/vpn-connection] Config ./environments/dev/subscription-a/vpn-gateway/terragrunt.hcl is a dependency of ./environments/dev/subscription-b/vpn-connection/terragrunt.hcl that has no outputs, but mock outputs provided and returning those in dependency output.
+21:14:22.554 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: data.azurerm_client_config.current: Reading...
+21:14:22.555 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: data.azurerm_client_config.current: Read complete after 0s [id=Y2xpZW50Q29uZmlncy9jbGllbnRJZD0wNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDY7b2JqZWN0SWQ9MmUwZDFmMmMtZDc0NS00ZDVlLWE3NjMtNDYxN2FmNWQyYjIwO3N1YnNjcmlwdGlvbklkPTg1NjU5YmIwLTZiZTQtNDRmYi1iZTZkLWY0NjMwMWIwNDZkNDt0ZW5hbnRJZD1jMmM2NWM5MC02YmRlLTQ0YjMtOTc3YS1lZjU0ZTQ5MzQ4ZGU=]
+21:14:22.571 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: Terraform used the selected providers to generate the following execution
+21:14:22.571 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: plan. Resource actions are indicated with the following symbols:
+21:14:22.571 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   + create
+21:14:22.571 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: Terraform will perform the following actions:
+21:14:22.571 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   # azurerm_key_vault.main will be created
+21:14:22.571 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   + resource "azurerm_key_vault" "main" {
+21:14:22.571 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + access_policy                 = [
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:           + {
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:               + object_id          = "2e0d1f2c-d745-4d5e-a763-4617af5d2b20"
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:               + secret_permissions = [
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:                   + "Set",
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:                   + "Get",
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:                   + "Delete",
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:                   + "List",
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:                 ]
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:               + tenant_id          = "c2c65c90-6bde-44b3-977a-ef54e49348de"
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:             },
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:         ]
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + id                            = (known after apply)
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + location                      = "westus2"
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + name                          = "kv-myvpnsecrets-01"
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + public_network_access_enabled = true
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + purge_protection_enabled      = false
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + resource_group_name           = "mock-rg-name"
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + sku_name                      = "standard"
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + soft_delete_retention_days    = 7
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + tenant_id                     = "c2c65c90-6bde-44b3-977a-ef54e49348de"
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + vault_uri                     = (known after apply)
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:     }
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   # azurerm_key_vault_secret.vpn_shared_key will be created
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   + resource "azurerm_key_vault_secret" "vpn_shared_key" {
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + content_type            = "IPsec Shared Key"
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + id                      = (known after apply)
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + key_vault_id            = (known after apply)
+21:14:22.572 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + name                    = "vpn-shared-key"
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + resource_id             = (known after apply)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + resource_versionless_id = (known after apply)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + value                   = (sensitive value)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + version                 = (known after apply)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + versionless_id          = (known after apply)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:     }
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   # azurerm_virtual_network_gateway_connection.main will be created
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   + resource "azurerm_virtual_network_gateway_connection" "main" {
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + connection_mode                    = "Default"
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + connection_protocol                = (known after apply)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + enable_bgp                         = (known after apply)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + express_route_gateway_bypass       = (known after apply)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + id                                 = (known after apply)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + location                           = "westus2"
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + name                               = "conn-dev-b-to-a"
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + peer_virtual_network_gateway_id    = "/subscriptions/12345678-1234-9876-4563-123456789013/resourceGroups/example-resource-group/providers/Microsoft.Network/virtualNetworkGateways/virtualNetworkGatewayName"
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + private_link_fast_path_enabled     = false
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + resource_group_name                = "mock-rg-name"
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + routing_weight                     = (known after apply)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + shared_key                         = (sensitive value)
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + tags                               = {
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:           + "Environment"  = "dev"
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:           + "Project"      = "azure-vnet-vpn"
+21:14:22.573 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:           + "Subscription" = "subscription-b"
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:         }
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + type                               = "Vnet2Vnet"
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + use_policy_based_traffic_selectors = (known after apply)
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + virtual_network_gateway_id         = "/subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/example-resource-group/providers/Microsoft.Network/virtualNetworkGateways/virtualNetworkGatewayName"
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:     }
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   # random_string.vpn_shared_key will be created
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   + resource "random_string" "vpn_shared_key" {
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + id               = (known after apply)
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + length           = 32
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + lower            = true
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + min_lower        = 0
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + min_numeric      = 0
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + min_special      = 0
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + min_upper        = 0
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + number           = true
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + numeric          = true
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + override_special = "!@#$%&*-_=+"
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + result           = (known after apply)
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + special          = true
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:       + upper            = true
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:     }
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: Plan: 4 to add, 0 to change, 0 to destroy.
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: 
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: Changes to Outputs:
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   + connection_id   = (known after apply)
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform:   + connection_name = "conn-dev-b-to-a"
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: 
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: ─────────────────────────────────────────────────────────────────────────────
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: Note: You didn't use the -out option to save this plan, so Terraform can't
+21:14:22.574 STDOUT [environments/dev/subscription-b/vpn-connection] terraform: guarantee to take exactly these actions if you run "terraform apply" now.
+21:14:22.674 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: data.azurerm_client_config.current: Reading...
+21:14:22.675 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: data.azurerm_client_config.current: Read complete after 0s [id=Y2xpZW50Q29uZmlncy9jbGllbnRJZD0wNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDY7b2JqZWN0SWQ9MmUwZDFmMmMtZDc0NS00ZDVlLWE3NjMtNDYxN2FmNWQyYjIwO3N1YnNjcmlwdGlvbklkPTg1NjU5YmIwLTZiZTQtNDRmYi1iZTZkLWY0NjMwMWIwNDZkNDt0ZW5hbnRJZD1jMmM2NWM5MC02YmRlLTQ0YjMtOTc3YS1lZjU0ZTQ5MzQ4ZGU=]
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: Terraform used the selected providers to generate the following execution
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: plan. Resource actions are indicated with the following symbols:
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   + create
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: Terraform will perform the following actions:
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   # azurerm_key_vault.main will be created
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   + resource "azurerm_key_vault" "main" {
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + access_policy                 = [
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:           + {
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:               + object_id          = "2e0d1f2c-d745-4d5e-a763-4617af5d2b20"
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:               + secret_permissions = [
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:                   + "Set",
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:                   + "Get",
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:                   + "Delete",
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:                   + "List",
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:                 ]
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:               + tenant_id          = "c2c65c90-6bde-44b3-977a-ef54e49348de"
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:             },
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:         ]
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + id                            = (known after apply)
+21:14:22.690 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + location                      = "eastus"
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + name                          = "kv-myvpnsecrets-01"
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + public_network_access_enabled = true
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + purge_protection_enabled      = false
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + resource_group_name           = "mock-rg-name"
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + sku_name                      = "standard"
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + soft_delete_retention_days    = 7
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + tenant_id                     = "c2c65c90-6bde-44b3-977a-ef54e49348de"
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + vault_uri                     = (known after apply)
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:     }
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   # azurerm_key_vault_secret.vpn_shared_key will be created
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   + resource "azurerm_key_vault_secret" "vpn_shared_key" {
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + content_type            = "IPsec Shared Key"
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + id                      = (known after apply)
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + key_vault_id            = (known after apply)
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + name                    = "vpn-shared-key"
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + resource_id             = (known after apply)
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + resource_versionless_id = (known after apply)
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + value                   = (sensitive value)
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + version                 = (known after apply)
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + versionless_id          = (known after apply)
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:     }
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   # azurerm_virtual_network_gateway_connection.main will be created
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   + resource "azurerm_virtual_network_gateway_connection" "main" {
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + connection_mode                    = "Default"
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + connection_protocol                = (known after apply)
+21:14:22.691 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + enable_bgp                         = (known after apply)
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + express_route_gateway_bypass       = (known after apply)
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + id                                 = (known after apply)
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + location                           = "eastus"
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + name                               = "conn-dev-a-to-b"
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + peer_virtual_network_gateway_id    = "/subscriptions/12345678-1234-9876-4563-123456789015/resourceGroups/example-resource-group/providers/Microsoft.Network/virtualNetworkGateways/virtualNetworkGatewayName"
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + private_link_fast_path_enabled     = false
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + resource_group_name                = "mock-rg-name"
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + routing_weight                     = (known after apply)
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + shared_key                         = (sensitive value)
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + tags                               = {
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:           + "Environment"  = "dev"
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:           + "Project"      = "azure-vnet-vpn"
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:           + "Subscription" = "subscription-a"
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:         }
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + type                               = "Vnet2Vnet"
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + use_policy_based_traffic_selectors = (known after apply)
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + virtual_network_gateway_id         = "/subscriptions/12345678-1234-9876-4563-123456789014/resourceGroups/example-resource-group/providers/Microsoft.Network/virtualNetworkGateways/virtualNetworkGatewayName"
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:     }
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   # random_string.vpn_shared_key will be created
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   + resource "random_string" "vpn_shared_key" {
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + id               = (known after apply)
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + length           = 32
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + lower            = true
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + min_lower        = 0
+21:14:22.692 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + min_numeric      = 0
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + min_special      = 0
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + min_upper        = 0
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + number           = true
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + numeric          = true
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + override_special = "!@#$%&*-_=+"
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + result           = (known after apply)
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + special          = true
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:       + upper            = true
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:     }
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: Plan: 4 to add, 0 to change, 0 to destroy.
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: 
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: Changes to Outputs:
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   + connection_id   = (known after apply)
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform:   + connection_name = "conn-dev-a-to-b"
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: 
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: ─────────────────────────────────────────────────────────────────────────────
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: Note: You didn't use the -out option to save this plan, so Terraform can't
+21:14:22.693 STDOUT [environments/dev/subscription-a/vpn-connection] terraform: guarantee to take exactly these actions if you run "terraform apply" now.

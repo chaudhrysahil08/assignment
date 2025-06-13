@@ -4,7 +4,7 @@ This project sets up VNet-to-VNet VPN connections between two Azure subscription
 
 ## 📋 Table of Contents
 
-- [Architecture Overview](#architecture-overview)
+- [Architecture Overview](#https://github.com/chaudhrysahil08/assignment/blob/main/README.md#%EF%B8%8F-architecture-overview)
 - [Prerequisites](#prerequisites)
 - [Project Structure](#project-structure)
 - [Setup Instructions](#setup-instructions)
@@ -402,5 +402,5 @@ az group delete --name "rg-terraform-state-prod" --yes --no-wait
 - I have replaced the subscription_id's with mock values
 - I have also used mock_outputs to avoid dependency issues
 - I have only created one environment(dev) and we can replicate all the other environments in the same way
-- I generated the plan on my local with backend in Azure Storage account but did not do apply
+- I generated the plan on my local with backend in Azure Storage account but did not do apply due to non availability of multiple subscriptions
 - Provided the output of the plan in the text file - plan.txt which is at the root directory of the repo
